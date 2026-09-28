@@ -3,11 +3,11 @@ require('dotenv').config();
 
 const cors = require('cors');
 const morgan = require('morgan');
-const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cookieParser = require('cookie-parser');
 
 const authRouter = require('./routes/auth');
+const menuRouter = require('./routes/menu');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,6 +28,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/menu-items', menuRouter);
 
 
 if(process.env.NODE_ENV !== 'test'){
