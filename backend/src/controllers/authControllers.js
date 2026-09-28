@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const { generateToken, setTokenCookie } = require('../utils/authHelpers');
+const { generateToken, setTokenCookie, clearTokenCookie } = require('../utils/authHelpers');
 
 const Register = async (req, res) => {
     try{
@@ -62,4 +62,38 @@ const Login = async (req, res) => {
     }
 }
 
-module.exports = { Register, Login };
+const CurrentUser = async (req, res) => {
+    try{
+        res.status(200).json({
+            success: true,
+            user: req.user.toSafeObject()
+        });
+    } 
+    catch(error){
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching current user',
+            error: error.message
+        });
+    }
+};
+
+const Logout = async (req, res) => {
+    try{
+        clearTokenCookie(res);
+
+        res.status(200).json({
+            success: true,
+            message: 'User logged out successfully'
+        });
+    } 
+    catch(error){
+        res.status(500).json({
+            success: false,
+            message: 'Error logging out user',
+            error: error.message
+        });
+    }
+};
+
+module.exports = { Register, Login, CurrentUser, Logout };

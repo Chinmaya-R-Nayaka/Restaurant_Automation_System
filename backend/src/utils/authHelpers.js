@@ -14,4 +14,12 @@ const setTokenCookie = (res, token) => {
     });
 };
 
-module.exports = { generateToken, setTokenCookie };
+const clearTokenCookie = (res) => {
+    res.clearCookie('token', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production'? 'none' : 'lax'
+    });
+};
+
+module.exports = { generateToken, setTokenCookie, clearTokenCookie };
