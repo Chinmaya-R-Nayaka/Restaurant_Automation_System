@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 
 const authRouter = require('./routes/auth');
 const menuRouter = require('./routes/menu');
+const orderRouter = require('./routes/order');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ app.use(express.json());
 // Routes
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/menu-items', menuRouter);
+app.use('/api/v1/orders', orderRouter);
 
 
 if(process.env.NODE_ENV !== 'test'){
