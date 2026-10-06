@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const authRouter = require('./routes/auth');
 const menuRouter = require('./routes/menu');
 const orderRouter = require('./routes/order');
+const inventoryRouter = require('./routes/inventory');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/menu-items', menuRouter);
 app.use('/api/v1/orders', orderRouter);
+app.use('/api/v1/ingredients', inventoryRouter);
 
 
 if(process.env.NODE_ENV !== 'test'){
