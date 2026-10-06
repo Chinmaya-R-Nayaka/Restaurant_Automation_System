@@ -10,6 +10,7 @@ const authRouter = require('./routes/auth');
 const menuRouter = require('./routes/menu');
 const orderRouter = require('./routes/order');
 const inventoryRouter = require('./routes/inventory');
+const purchaseOrderRouter = require('./routes/purchaseOrder');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -33,7 +34,16 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/menu-items', menuRouter);
 app.use('/api/v1/orders', orderRouter);
 app.use('/api/v1/ingredients', inventoryRouter);
+app.use('/api/v1/purchase-orders', purchaseOrderRouter);
 
+// Error handling middleware
+// app.use((err, req, res, next) => {
+//     console.error(err.stack);
+//     res.status(500).json({
+//       success: false,
+//       message: 'Something went wrong!'
+//     });
+// });
 
 if(process.env.NODE_ENV !== 'test'){
   app.listen(port, () => {
