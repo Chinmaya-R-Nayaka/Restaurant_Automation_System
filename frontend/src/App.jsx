@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import MenuPage from "./pages/MenuPage";
 import NewOrderPage from './pages/NewOrderPage';
 import SalesHistory from './pages/SalesHistory';
+import InventoryDashboard from './pages/InventoryDashboard';
 
 
 function App(){
@@ -21,6 +22,8 @@ function App(){
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/orders" element={<NewOrderPage/>}/>
         <Route path="/sales-history" element={<SalesHistory/>}/>
+
+        <Route path="/inventory" element={<InventoryDashboard/>}/>
       </Routes>
     </BrowserRouter>
   )
