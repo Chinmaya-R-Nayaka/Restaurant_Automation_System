@@ -10,6 +10,7 @@ import NewOrderPage from './pages/NewOrderPage';
 import SalesHistory from './pages/SalesHistory';
 import InventoryDashboard from './pages/InventoryDashboard';
 import PurchaseOrderPage from './pages/PurchaseOrderPage';
+import InvoicePage from './pages/InvoicePage';
 
 
 function App(){
@@ -26,6 +27,7 @@ function App(){
 
         <Route path="/inventory" element={<InventoryDashboard/>}/>
         <Route path="/purchase-orders" element={<PurchaseOrderPage/>}/>
+        <Route path="/invoices" element={<InvoicePage/>}/>
       </Routes>
     </BrowserRouter>
   )
