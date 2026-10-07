@@ -11,6 +11,7 @@ const menuRouter = require('./routes/menu');
 const orderRouter = require('./routes/order');
 const inventoryRouter = require('./routes/inventory');
 const purchaseOrderRouter = require('./routes/purchaseOrder');
+const invoiceRouter = require('./routes/invoice');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -35,6 +36,7 @@ app.use('/api/v1/menu-items', menuRouter);
 app.use('/api/v1/orders', orderRouter);
 app.use('/api/v1/ingredients', inventoryRouter);
 app.use('/api/v1/purchase-orders', purchaseOrderRouter);
+app.use('/api/v1/invoices', invoiceRouter);
 
 // Error handling middleware
 // app.use((err, req, res, next) => {
