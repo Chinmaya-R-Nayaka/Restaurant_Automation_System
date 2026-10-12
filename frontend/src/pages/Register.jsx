@@ -1,12 +1,16 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import api from '../api/axios';
+import { useAuth } from '../context/AuthContext';
 
 function Register(){
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const { refreshUser } = useAuth();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,10 +21,13 @@ function Register(){
 
         try{
             const response = await api.post('/api/v1/auth/register', { name, email, password });
+            await refreshUser();
             console.log(response.data);
+            navigate('/dashboard', { replace: true });
         } 
         catch(error){
             console.error('Error registering user:', error);
+            alert(error.response?.data?.message || 'Error registering user');
         }
     }
 

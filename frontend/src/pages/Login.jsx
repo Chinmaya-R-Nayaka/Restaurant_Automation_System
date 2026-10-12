@@ -1,16 +1,21 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import api from '../api/axios';
+import { useAuth } from '../context/AuthContext';
 
 function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { refreshUser } = useAuth();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
             const response = await api.post('/api/v1/auth/login', { email, password });
-            console.log(response.data);
+            await refreshUser();
+            navigate('/dashboard', { replace: true });
+            // console.log(response.data);
         } 
         catch(error){
             console.error('Error logging in user:', error);

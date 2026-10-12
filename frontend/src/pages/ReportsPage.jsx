@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react';
 import api from '../api/axios';
 
+const formatAmount = (value) => {
+    if(value && typeof value === 'object' && '$numberDecimal' in value){
+        value = value.$numberDecimal;
+    }
+
+    const amount = Number(value);
+
+    return Number.isFinite(amount) ? amount.toFixed(2) : '0.00';
+};
+
 const ReportsPage = () => {
     const [sales, setSales] = useState(null);
     const [monthlySales, setMonthlySales] = useState([]);
@@ -55,18 +65,20 @@ const ReportsPage = () => {
                         Print Report
                     </button>
                 </div>
+
                 {message && <p className="text-[0.92rem] text-[#d98b6f]">{message}</p>}
+
                 <div>
                     <h2 className="font-['Fraunces',Georgia,serif] font-medium text-xl text-[#f4ebdc] mb-4">Sales Report</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div className="rounded-[16px] border border-[#f4ebdc]/10 bg-[#f4ebdc]/[0.04] p-6">
                             <p className="text-[0.8rem] text-[#8b7e70]">Total Sales</p>
-                            <p className="mt-2 font-['Fraunces',Georgia,serif] text-3xl text-[#c6a15b]">₹{sales?.totalSales}</p>
+                            <p className="mt-2 font-['Fraunces',Georgia,serif] text-3xl text-[#c6a15b]">₹{formatAmount(sales?.totalSales)}</p>
                         </div>
 
                         <div className="rounded-[16px] border border-[#f4ebdc]/10 bg-[#f4ebdc]/[0.04] p-6">
                             <p className="text-[0.8rem] text-[#8b7e70]">Total Orders</p>
-                            <p className="mt-2 font-['Fraunces',Georgia,serif] text-3xl text-[#f4ebdc]">{sales?.orderCount}</p>
+                            <p className="mt-2 font-['Fraunces',Georgia,serif] text-3xl text-[#f4ebdc]">{sales?.orderCount ?? 0}</p>
                         </div>
                     </div>
                 </div>
@@ -89,10 +101,16 @@ const ReportsPage = () => {
                                     <tr key={`${item._id.year}-${item._id.month}`} className="border-b border-[#f4ebdc]/5 last:border-0 transition-colors duration-200 hover:bg-[#f4ebdc]/[0.03]">
                                         <td className="py-3 px-4 text-[#f4ebdc]">{item._id.year}</td>
                                         <td className="py-3 px-4 text-[#d9cdb9]">{item._id.month}</td>
-                                        <td className="py-3 px-4 text-[#c6a15b]">₹{item.totalSales}</td>
-                                        <td className="py-3 px-4 text-[#d9cdb9]">{item.orderCount}</td>
+                                        <td className="py-3 px-4 text-[#c6a15b]">₹{formatAmount(item.totalSales)}</td>
+                                        <td className="py-3 px-4 text-[#d9cdb9]">{item.orderCount ?? 0}</td>
                                     </tr>
                                 ))}
+
+                                {monthlySales.length === 0 && (
+                                    <tr>
+                                        <td colSpan="4" className="py-5 px-4 text-center text-[#8b7e70]">No sales data available</td>
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </div>
@@ -116,10 +134,16 @@ const ReportsPage = () => {
                                     <tr key={`${item._id.year}-${item._id.month}`} className="border-b border-[#f4ebdc]/5 last:border-0 transition-colors duration-200 hover:bg-[#f4ebdc]/[0.03]">
                                         <td className="py-3 px-4 text-[#f4ebdc]">{item._id.year}</td>
                                         <td className="py-3 px-4 text-[#d9cdb9]">{item._id.month}</td>
-                                        <td className="py-3 px-4 text-[#d98b6f]">₹{item.totalExpenses}</td>
-                                        <td className="py-3 px-4 text-[#d9cdb9]">{item.invoiceCount}</td>
+                                        <td className="py-3 px-4 text-[#d98b6f]">₹{formatAmount(item.totalExpenses)}</td>
+                                        <td className="py-3 px-4 text-[#d9cdb9]">{item.invoiceCount ?? 0}</td>
                                     </tr>
                                 ))}
+
+                                {monthlyExpenses.length === 0 && (
+                                    <tr>
+                                        <td colSpan="4" className="py-5 px-4 text-center text-[#8b7e70]">No expense data available</td>
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </div>
