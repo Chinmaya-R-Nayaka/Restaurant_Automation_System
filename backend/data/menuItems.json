@@ -1,0 +1,269 @@
+
+[
+  {
+    "itemCode": "SI001",
+    "itemName": "Masala Dosa",
+    "category": "South Indian",
+    "price": 80,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "SI002",
+    "itemName": "Idli Sambar (2 pcs)",
+    "category": "South Indian",
+    "price": 45,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "SI003",
+    "itemName": "Medu Vada (2 pcs)",
+    "category": "South Indian",
+    "price": 50,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "SI004",
+    "itemName": "Plain Dosa",
+    "category": "South Indian",
+    "price": 60,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "SI005",
+    "itemName": "Onion Uttapam",
+    "category": "South Indian",
+    "price": 70,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "ST001",
+    "itemName": "French Fries",
+    "category": "Starters",
+    "price": 90,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "ST002",
+    "itemName": "Veg Manchurian",
+    "category": "Starters",
+    "price": 130,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "ST003",
+    "itemName": "Paneer Tikka",
+    "category": "Starters",
+    "price": 180,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "ST004",
+    "itemName": "Chicken 65",
+    "category": "Starters",
+    "price": 190,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "ST005",
+    "itemName": "Chicken Lollipop (6 pcs)",
+    "category": "Starters",
+    "price": 220,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC001",
+    "itemName": "Veg Fried Rice",
+    "category": "Main Course",
+    "price": 120,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC002",
+    "itemName": "Veg Hakka Noodles",
+    "category": "Main Course",
+    "price": 130,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC003",
+    "itemName": "Paneer Butter Masala",
+    "category": "Main Course",
+    "price": 190,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC004",
+    "itemName": "Dal Tadka",
+    "category": "Main Course",
+    "price": 140,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC005",
+    "itemName": "Chicken Curry",
+    "category": "Main Course",
+    "price": 220,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC006",
+    "itemName": "Butter Chicken",
+    "category": "Main Course",
+    "price": 260,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC007",
+    "itemName": "Egg Fried Rice",
+    "category": "Main Course",
+    "price": 140,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC008",
+    "itemName": "Chicken Biryani",
+    "category": "Main Course",
+    "price": 200,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC009",
+    "itemName": "Veg Biryani",
+    "category": "Main Course",
+    "price": 150,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "MC010",
+    "itemName": "Butter Naan",
+    "category": "Main Course",
+    "price": 40,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "FS001",
+    "itemName": "Veg Burger",
+    "category": "Fast Food",
+    "price": 90,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "FS002",
+    "itemName": "Chicken Burger",
+    "category": "Fast Food",
+    "price": 130,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "FS003",
+    "itemName": "Veg Grilled Sandwich",
+    "category": "Fast Food",
+    "price": 100,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "FS004",
+    "itemName": "Cheese Sandwich",
+    "category": "Fast Food",
+    "price": 120,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "FS005",
+    "itemName": "Margherita Pizza",
+    "category": "Fast Food",
+    "price": 180,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "FS006",
+    "itemName": "Farmhouse Pizza",
+    "category": "Fast Food",
+    "price": 250,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV001",
+    "itemName": "Tea",
+    "category": "Beverages",
+    "price": 15,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV002",
+    "itemName": "Coffee",
+    "category": "Beverages",
+    "price": 25,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV003",
+    "itemName": "Fresh Lime Soda",
+    "category": "Beverages",
+    "price": 50,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV004",
+    "itemName": "Cold Coffee",
+    "category": "Beverages",
+    "price": 80,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV005",
+    "itemName": "Mango Milkshake",
+    "category": "Beverages",
+    "price": 90,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV006",
+    "itemName": "Sweet Lassi",
+    "category": "Beverages",
+    "price": 60,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "BV007",
+    "itemName": "Bottled Water",
+    "category": "Beverages",
+    "price": 20,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "DS001",
+    "itemName": "Gulab Jamun (2 pcs)",
+    "category": "Desserts",
+    "price": 50,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "DS002",
+    "itemName": "Vanilla Ice Cream",
+    "category": "Desserts",
+    "price": 60,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "DS003",
+    "itemName": "Chocolate Brownie",
+    "category": "Desserts",
+    "price": 100,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "DS004",
+    "itemName": "Chocolate Ice Cream",
+    "category": "Desserts",
+    "price": 70,
+    "isAvailable": true
+  },
+  {
+    "itemCode": "DS005",
+    "itemName": "Rasmalai (2 pcs)",
+    "category": "Desserts",
+    "price": 80,
+    "isAvailable": true
+  }
+]
