@@ -11,7 +11,7 @@ const Register = async (req, res) => {
             return res.status(400).json({ success: false, message: 'User already exists' });
         }
 
-        const user = await User.create({ name, email, password, provider: 'local' });
+        const user = await User.create({ name, email, password, role: 'customer' });
         const token = generateToken(user._id);
         setTokenCookie(res, token);
 
