@@ -12,6 +12,7 @@ const orderRouter = require('./routes/order');
 const inventoryRouter = require('./routes/inventory');
 const purchaseOrderRouter = require('./routes/purchaseOrder');
 const invoiceRouter = require('./routes/invoice');
+const reportRouter = require('./routes/report');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -37,6 +38,7 @@ app.use('/api/v1/orders', orderRouter);
 app.use('/api/v1/ingredients', inventoryRouter);
 app.use('/api/v1/purchase-orders', purchaseOrderRouter);
 app.use('/api/v1/invoices', invoiceRouter);
+app.use('/api/v1/reports', reportRouter);
 
 // Error handling middleware
 // app.use((err, req, res, next) => {
